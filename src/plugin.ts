@@ -1,11 +1,11 @@
 import type { Plugin } from 'vue'
-// import Tabs from './components/Tabs.vue'
-import { TabPane } from './components/TabPane'
+// import Tabs from './components/tabs/Tabs.vue'
+import { TabPane } from './components/tabs/TabPane'
 export function WlComPlugin(): Plugin {
   return {
     install(app) {
-      // app.component('WlTab', Tabs)
-      app.component('TabPane', TabPane)
+      // app.component('WlTabs', Tabs)
+      app.component('WlTabPane', TabPane)
     },
   }
 }

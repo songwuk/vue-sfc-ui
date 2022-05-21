@@ -20,7 +20,8 @@ export default defineConfig({
         {
           from: 'vue-sfc-ui',
           names: [
-            'TabPane',
+            'WlTabPane',
+            'WlTabs',
           ],
         },
       ],

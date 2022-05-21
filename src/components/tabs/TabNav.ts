@@ -1,6 +1,6 @@
 import { defineComponent, getCurrentInstance, h, inject, nextTick, onMounted, toRefs, watch } from 'vue'
-import { tabsRootContextKey } from '../types'
-import { throwError } from './error'
+import { tabsRootContextKey } from '../../types'
+import { throwError } from '../error'
 const tabnavprops = {
   currentName: {
     type: String || Number,
@@ -12,7 +12,7 @@ const tabnavprops = {
   },
 } as const
 const TabNav = defineComponent({
-  name: 'TabNav',
+  name: 'WlTabNav',
   props: tabnavprops,
   emits: {
     'tab-nav-click': <T extends string>(ev: Event, name: T) => ev instanceof Event && name,

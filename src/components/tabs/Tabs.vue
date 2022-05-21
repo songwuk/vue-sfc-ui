@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, defineEmits, getCurrentInstance, nextTick, provide, reactive, ref } from 'vue'
 import type { StyleValue } from 'vue'
-import { tabsRootContextKey } from '../types'
-import type { TabsPaneContext } from '../types'
+import { tabsRootContextKey } from '../../types'
+import type { TabsPaneContext } from '../../types'
 
 import TabNav from './TabNav'
 const vm = getCurrentInstance()!

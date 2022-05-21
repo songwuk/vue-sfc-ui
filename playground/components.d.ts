@@ -5,7 +5,8 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    TabPane: typeof import('vue-sfc-ui')['TabPane']
+    WlTabPane: typeof import('vue-sfc-ui')['WlTabPane']
+    WlTabs: typeof import('vue-sfc-ui')['WlTabs']
   }
 }
 

@@ -1,9 +1,9 @@
 import { computed, defineComponent, getCurrentInstance, h, inject, onMounted, onUnmounted, reactive, ref, toRefs, useSlots } from 'vue'
 import type { DefineComponent } from 'vue'
-import { tabsRootContextKey } from '../types'
-import { throwError } from './error'
+import { tabsRootContextKey } from '../../types'
+import { throwError } from '../error'
 export const TabPane = defineComponent({
-  name: 'TabPane',
+  name: 'WlTabPane',
   props: {
     label: {
       type: String,
