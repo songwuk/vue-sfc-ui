@@ -5,7 +5,7 @@ export function WlComPlugin(): Plugin {
   return {
     install(app) {
       // app.component('WlTab', Tabs)
-      app.component('WlPane', TabPane)
+      app.component('TabPane', TabPane)
     },
   }
 }
