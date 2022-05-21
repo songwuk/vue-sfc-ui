@@ -1,0 +1,54 @@
+{
+  "name": "vue-sfc-ui",
+  "version": "0.0.1-alpha.3",
+  "packageManager": "pnpm@6.32.3",
+  "description": "Vue component",
+  "keywords": [
+    "vue",
+    "tab"
+  ],
+  "homepage": "https://github.com/songwuk/vue-sfc-ui#readme",
+  "bugs": {
+    "url": "https://github.com/songwuk/vue-sfc-ui/issues"
+  },
+  "license": "MIT",
+  "author": "Song wuk <1017301325@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songwuk/vue-sfc-ui.git"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],  "scripts": {
+    "build": "pkgroll",
+    "dev": "pkgroll --watch",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint . --fix",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vueuse/core": "^8.2.4",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.19.4",
+    "@types/node": "^17.0.23",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "eslint": "^8.16.0",
+    "pkgroll": "^1.3.1",
+    "pnpm": "^6.32.3",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.9"
+  }
+}
