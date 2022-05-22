@@ -3,7 +3,7 @@ import { tabsRootContextKey } from '../../types'
 import { throwError } from '../error'
 const tabnavprops = {
   currentName: {
-    type: String || Number,
+    type: String,
     default: '',
   },
   panes: {
@@ -23,10 +23,9 @@ const TabNav = defineComponent({
     if (!rootTabs)
       throwError('COMPONENT_NAME', '<el-tabs><tab-nav /></el-tabs>')
     const { currentName, panes } = toRefs(props)
-
     function tabNavClick(ev: Event, tabName: string) {
       const instance = vm.refs?.[`tab-${tabName}`] as HTMLElement
-      ctx.emit('tab-nav-click', ev, tabName, instance.getBoundingClientRect())
+      ctx.emit('tab-nav-click', ev, tabName, instance?.getBoundingClientRect())
     }
     watch(() => panes.value, async() => {
       await nextTick()
@@ -35,17 +34,16 @@ const TabNav = defineComponent({
     onMounted(() => {
       if (currentName.value) {
         const instance = vm.refs?.[`tab-${currentName.value}`] as HTMLElement
-        ctx.emit('tab-nav-click', 'ev', currentName.value, instance.getBoundingClientRect())
+        ctx.emit('tab-nav-click', instance.dispatchEvent, currentName.value, instance?.getBoundingClientRect())
       }
     })
     return () => panes.value.map((pane: any, index) => {
       const tabName = pane.props.name || pane.index || `${index}`
       const tabLabelContent = pane.slots.label?.() || pane.props.label
       return h('div', {
-        'ref': `tab-${tabName}`,
-        'cursor-pointer': '',
-        'style': { 'padding-bottom': '0.5rem', 'color': pane.active ? '#3d7fff' : '' },
-        'onClick': (event: Event) => tabNavClick(event, tabName),
+        ref: `tab-${tabName}`,
+        style: { 'cursor': 'pointer', 'padding-bottom': '0.5rem', 'color': pane.active ? '#3d7fff' : '' },
+        onClick: (event: Event) => tabNavClick(event, tabName),
       }, tabLabelContent)
     })
   },

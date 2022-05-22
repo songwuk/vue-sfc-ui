@@ -11,8 +11,10 @@
     "vue": "^3.2.35"
   },
   "devDependencies": {
+    "@unocss/reset": "^0.34.0",
     "@vitejs/plugin-vue": "^2.3.3",
     "typescript": "^4.5.4",
+    "unocss": "^0.34.0",
     "unplugin-vue-components": "^0.19.5",
     "vite": "^2.9.9"
   }

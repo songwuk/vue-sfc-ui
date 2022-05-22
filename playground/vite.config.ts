@@ -2,7 +2,7 @@ import path from 'path'
 import Components from 'unplugin-vue-components/vite'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-
+import Unocss from 'unocss/vite'
 export default defineConfig({
   resolve: {
     alias: {
@@ -26,5 +26,6 @@ export default defineConfig({
         },
       ],
     }),
+    Unocss(),
   ],
 })
